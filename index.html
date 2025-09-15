@@ -28,6 +28,21 @@
 </head>
 <body class="bg-gray-100 font-sans">
     <!-- Hero Section -->
+<!-- Sticky Cart Icon -->
+<div id="cartIcon" 
+     class="fixed bottom-6 right-6 bg-gradient-to-r from-indigo-500 to-purple-600 
+            text-white w-14 h-14 rounded-full flex items-center justify-center 
+            shadow-xl cursor-pointer transition-transform duration-300 hover:scale-110">
+    
+    <i class="fa-solid fa-cart-shopping text-2xl animate-bounce"></i>
+
+    <span id="cartCount" 
+          class="absolute top-1 right-1 bg-red-500 text-white text-xs 
+                 w-6 h-6 flex items-center justify-center rounded-full shadow-md">
+        0
+    </span>
+</div>
+    
     <header class="hero-bg text-white text-center py-20">
         <h1 class="text-5xl font-bold mb-4">Welcome to TCafe</h1>
         <p class="text-xl">☕ Delicious Coffee · 🍴 Fresh Cuisine</p>
@@ -242,22 +257,9 @@
         <p>© CODE WITH SHANI.</p>
     </footer>
 
-    <script>
-        let orderList = [];
-        function addToOrder(item, price) {
-            orderList.push({item: item, price: price});
-            updateOrderDisplay();
-        }
-        function updateOrderDisplay() {
-            const orderItemsTextarea = document.getElementById('orderItems');
-            orderItemsTextarea.value = orderList.map((order, index) => `${index + 1}. ${order.item} - ₹${order.price}`).join('\n');
-        }
-        function scrollToCategory(categoryId) {
-            document.getElementById(categoryId).scrollIntoView({behavior: 'smooth'});
-        }
 
-    </script>
 </body>
 </html>
 </content>
+
 </create_file>
